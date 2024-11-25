@@ -12,6 +12,6 @@ namespace DoAn.Models
         public int ID_DatHang { get; set; }
         public int ID_SanPham { get; set; }
         public int SoLuong { get; set; }
-        public decimal DonViGia { get; set; }
+       
     }
 }

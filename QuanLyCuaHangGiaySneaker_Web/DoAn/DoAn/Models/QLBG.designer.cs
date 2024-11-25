@@ -22,7 +22,7 @@ namespace DoAn.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLBG")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLBGs")]
 	public partial class QLBGDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -59,6 +59,12 @@ namespace DoAn.Models
     partial void DeleteTHUONGHIEU(THUONGHIEU instance);
     #endregion
 		
+		public QLBGDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLBGIAYConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
 		public QLBGDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
@@ -82,15 +88,8 @@ namespace DoAn.Models
 		{
 			OnCreated();
 		}
-
-        public QLBGDataContext() :
-                            base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLBGConnectionString"].ConnectionString, mappingSource)
-
-        {
-			OnCreated();
-        }
-
-        public System.Data.Linq.Table<CT_DATHANG> CT_DATHANGs
+		
+		public System.Data.Linq.Table<CT_DATHANG> CT_DATHANGs
 		{
 			get
 			{
@@ -177,8 +176,6 @@ namespace DoAn.Models
 		
 		private System.Nullable<int> _SoLuong;
 		
-		private System.Nullable<decimal> _DonViGia;
-		
 		private EntityRef<DATHANG> _DATHANG;
 		
 		private EntityRef<SANPHAM> _SANPHAM;
@@ -195,8 +192,6 @@ namespace DoAn.Models
     partial void OnID_SanPhamChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
-    partial void OnDonViGiaChanging(System.Nullable<decimal> value);
-    partial void OnDonViGiaChanged();
     #endregion
 		
 		public CT_DATHANG()
@@ -290,26 +285,6 @@ namespace DoAn.Models
 					this._SoLuong = value;
 					this.SendPropertyChanged("SoLuong");
 					this.OnSoLuongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonViGia", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> DonViGia
-		{
-			get
-			{
-				return this._DonViGia;
-			}
-			set
-			{
-				if ((this._DonViGia != value))
-				{
-					this.OnDonViGiaChanging(value);
-					this.SendPropertyChanging();
-					this._DonViGia = value;
-					this.SendPropertyChanged("DonViGia");
-					this.OnDonViGiaChanged();
 				}
 			}
 		}
@@ -462,29 +437,28 @@ namespace DoAn.Models
 			this._DATHANGs = new EntitySet<DATHANG>(new Action<DATHANG>(this.attach_DATHANGs), new Action<DATHANG>(this.detach_DATHANGs));
 			OnCreated();
 		}
-
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ID_KhachHang", DbType = "Int NOT NULL", IsPrimaryKey = true, IsDbGenerated = true)]
-        public int ID_KhachHang
-        {
-            get
-            {
-                return this._ID_KhachHang;
-            }
-            set
-            {
-                if ((this._ID_KhachHang != value))
-                {
-                    this.OnID_KhachHangChanging(value);
-                    this.SendPropertyChanging();
-                    this._ID_KhachHang = value;
-                    this.SendPropertyChanged("ID_KhachHang");
-                    this.OnID_KhachHangChanged();
-                }
-            }
-        }
-
-
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(60)")]
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_KhachHang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_KhachHang
+		{
+			get
+			{
+				return this._ID_KhachHang;
+			}
+			set
+			{
+				if ((this._ID_KhachHang != value))
+				{
+					this.OnID_KhachHangChanging(value);
+					this.SendPropertyChanging();
+					this._ID_KhachHang = value;
+					this.SendPropertyChanged("ID_KhachHang");
+					this.OnID_KhachHangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(60)")]
 		public string HoTen
 		{
 			get
@@ -708,9 +682,7 @@ namespace DoAn.Models
 			this.SendPropertyChanging();
 			entity.USER = null;
 		}
-
-       
-    }
+	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANHMUC")]
 	public partial class DANHMUC : INotifyPropertyChanging, INotifyPropertyChanged
@@ -838,7 +810,7 @@ namespace DoAn.Models
 		
 		private System.Nullable<System.DateTime> _NgayDat;
 		
-		private System.Nullable<decimal> _SoLuong;
+		private System.Nullable<decimal> _TongTien;
 		
 		private EntitySet<CT_DATHANG> _CT_DATHANGs;
 		
@@ -854,8 +826,8 @@ namespace DoAn.Models
     partial void OnID_KhachHangChanged();
     partial void OnNgayDatChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayDatChanged();
-    partial void OnSoLuongChanging(System.Nullable<decimal> value);
-    partial void OnSoLuongChanged();
+    partial void OnTongTienChanging(System.Nullable<decimal> value);
+    partial void OnTongTienChanged();
     #endregion
 		
 		public DATHANG()
@@ -929,22 +901,22 @@ namespace DoAn.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> SoLuong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> TongTien
 		{
 			get
 			{
-				return this._SoLuong;
+				return this._TongTien;
 			}
 			set
 			{
-				if ((this._SoLuong != value))
+				if ((this._TongTien != value))
 				{
-					this.OnSoLuongChanging(value);
+					this.OnTongTienChanging(value);
 					this.SendPropertyChanging();
-					this._SoLuong = value;
-					this.SendPropertyChanged("SoLuong");
-					this.OnSoLuongChanged();
+					this._TongTien = value;
+					this.SendPropertyChanged("TongTien");
+					this.OnTongTienChanged();
 				}
 			}
 		}

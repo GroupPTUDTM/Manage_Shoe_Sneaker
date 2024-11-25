@@ -1,18 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBG" Class="QLBGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBGs" Class="QLBGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=QLBGs;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLBGIAYConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CT_DATHANG" Member="CT_DATHANGs">
     <Type Name="CT_DATHANG">
       <Column Name="ID_CTDatHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_DatHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_SanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DonViGia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Association Name="DATHANG_CT_DATHANG" Member="DATHANG" ThisKey="ID_DatHang" OtherKey="ID_DatHang" Type="DATHANG" IsForeignKey="true" />
       <Association Name="SANPHAM_CT_DATHANG" Member="SANPHAM" ThisKey="ID_SanPham" OtherKey="ID_SanPham" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.USERS" Member="USERs">
     <Type Name="USER">
-      <Column Name="ID_KhachHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_KhachHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
@@ -37,7 +37,7 @@
       <Column Name="ID_DatHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_KhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayDat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Association Name="DATHANG_CT_DATHANG" Member="CT_DATHANGs" ThisKey="ID_DatHang" OtherKey="ID_DatHang" Type="CT_DATHANG" />
       <Association Name="USER_DATHANG" Member="USER" ThisKey="ID_KhachHang" OtherKey="ID_KhachHang" Type="USER" IsForeignKey="true" />
     </Type>

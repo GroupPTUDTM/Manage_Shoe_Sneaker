@@ -167,7 +167,7 @@ namespace DoAn.Controllers
                              ID_Khach = a.ID_KhachHang,
                              ngayDat = a.NgayDat,
                              Soluong = b.SoLuong,
-                             gia = b.DonViGia
+                             
                          };
 
             var result = listED.ToList();
