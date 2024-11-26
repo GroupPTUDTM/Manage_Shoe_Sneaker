@@ -37,8 +37,35 @@ namespace DoAn.Controllers
                 var token = await GoogleAuth.GetAuthAccessToken(code, ClientID, ClientSecret, url); 
                 var userProfile = await GoogleAuth.GetProfileResponseAsync(token.AccessToken.ToString());
                 var googleUser = JsonConvert.DeserializeObject<GoogleProfile>(userProfile);
+                // Giả sử bạn đã nhận được thông tin từ Google
+                string googleEmail = googleUser.Email;
+                string googleName = googleUser.Name;
+             
+
+                // Kiểm tra người dùng đã tồn tại trong database hay chưa
+                var user = db.USERs.SingleOrDefault(u => u.Email == googleEmail);
+
+                if (user == null)
+                {
+                    // Nếu chưa có, tạo tài khoản mới cho người dùng
+                    USER newUser = new USER
+                    {
+                       
+                        HoTen = googleName,
+                        Email = googleEmail,
+                      
+                        Role = false // Set default role to 0 for User
+                    };
+
+                    db.USERs.InsertOnSubmit(newUser);
+                    db.SubmitChanges();
+
+                    user = newUser; // Cập nhật lại user
+                }
+
                 Session["TaiKhoan"] = googleUser.Name;
                 Session["Img"] = googleUser.Name;
+                Session["user_id"] = user.ID_KhachHang;
 
 
                 //return RedirectToAction("Index", "Home");
@@ -93,6 +120,7 @@ namespace DoAn.Controllers
             if (user.Role == true)
             {
                 Session["TaiKhoan"] = user.TaiKhoan;
+                Session["user_id"] = user.ID_KhachHang;
                 // Nếu là Admin, chuyển hướng đến trang quản trị admin
                 return RedirectToAction("Index", "Admin");
             }
@@ -100,6 +128,7 @@ namespace DoAn.Controllers
             {        
                 // Lưu thông tin người dùng vào Session
                 Session["TaiKhoan"] = user.TaiKhoan;
+                Session["user_id"] = user.ID_KhachHang;
 
                 // Nếu là User, chuyển hướng đến trang chính của n  gười dùng
                 return RedirectToAction("Index", "Home");

@@ -1,10 +1,10 @@
-﻿CREATE DATABASE QLBG
+﻿CREATE DATABASE QLBGs
 GO
-USE QLBG
+USE QLBGs
 GO
 
 
-drop database QLBG
+
 
 CREATE TABLE USERS (
 	ID_KhachHang INT IDENTITY(1,1) ,
@@ -63,7 +63,7 @@ CREATE TABLE SANPHAM (
     FOREIGN KEY (ID_Mau) REFERENCES MAU(ID_Mau)
 );
 CREATE TABLE DATHANG (
-    ID_DatHang INT PRIMARY KEY,
+    ID_DatHang INT IDENTITY(1,1) PRIMARY KEY,
     ID_KhachHang INT,
     NgayDat DATE,
     SoLuong DECIMAL(10, 2),
@@ -71,7 +71,7 @@ CREATE TABLE DATHANG (
 );
 
 CREATE TABLE CT_DATHANG (
-    ID_CTDatHang INT PRIMARY KEY,
+    ID_CTDatHang INT IDENTITY(1,1) PRIMARY KEY,
     ID_DatHang INT,
     ID_SanPham INT,
     SoLuong INT,
@@ -191,17 +191,17 @@ INSERT INTO USERS (HoTen, NgaySinh, DiaChi, GioiTinh, Email, SoDienThoai, TaiKho
     (N'Nguyen Van J', '1987-07-08', N'707 Street, Republic', N'Nam', 'nguyenvanj@gmail.com', '0987654321', 'user10', 'password10', 0);
 
 -- Thêm dữ liệu vào bảng DATHANG
-INSERT INTO DATHANG (ID_DatHang, ID_KhachHang, NgayDat, SoLuong) VALUES
-    (1, 1, '2023-01-01', 2),
-    (2, 2, '2023-01-02', 3),
-    (3, 3, '2023-01-03', 1),
-    (4, 4, '2023-01-04', 4),
-    (5, 5, '2023-01-05', 2),
-    (6, 6, '2023-01-06', 1),
-    (7, 7, '2023-01-07', 3),
-    (8, 8, '2023-01-08', 2),
-    (9, 9, '2023-01-09', 1),
-    (10, 10, '2023-01-10', 5);
+INSERT INTO DATHANG (ID_KhachHang, NgayDat, SoLuong) VALUES
+    (1, '2023-01-01', 2),
+    (2, '2023-01-02', 3),
+    (3, '2023-01-03', 1),
+    (4, '2023-01-04', 4),
+    (5, '2023-01-05', 2),
+    (6, '2023-01-06', 1),
+    (7, '2023-01-07', 3),
+    (8, '2023-01-08', 2),
+    (9, '2023-01-09', 1),
+    (10, '2023-01-10', 5);
 
 -- Thêm dữ liệu vào bảng CT_DATHANG
 INSERT INTO CT_DATHANG (ID_CTDatHang, ID_DatHang, ID_SanPham, SoLuong, DonViGia) VALUES
@@ -216,14 +216,25 @@ INSERT INTO CT_DATHANG (ID_CTDatHang, ID_DatHang, ID_SanPham, SoLuong, DonViGia)
     (9, 9, 8, 1, 59.99),
     (10, 10, 10, 5, 139.99);
 
+-- Sửa bảng DATHANG
+ALTER TABLE DATHANG
+DROP COLUMN SoLuong;
 
-	Select * from USERS
+ALTER TABLE DATHANG
+ADD TongTien DECIMAL(15, 2);
+
+-- Sửa bảng CT_DATHANG
+ALTER TABLE CT_DATHANG
+DROP COLUMN DonViGia;
+
+
+	--Select * from USERS
 	
 	
 	
-	  DELETE FROM USERS WHERE ID_KhachHang='0';
+	--  DELETE FROM USERS WHERE ID_KhachHang='0';
 
-	  INSERT INTO USERS (HoTen, NgaySinh, DiaChi, GioiTinh, Email, SoDienThoai, TaiKhoan, MatKhau, Role) VALUES
-    (N'Nguyen Van An', '1990-01-01', N'123 Street, City', N'Nam', 'nguyenvanan@gmail.com', '0123456789', 'admin', '123', 1)
+	--  INSERT INTO USERS (HoTen, NgaySinh, DiaChi, GioiTinh, Email, SoDienThoai, TaiKhoan, MatKhau, Role) VALUES
+ --   (N'Nguyen Van An', '1990-01-01', N'123 Street, City', N'Nam', 'nguyenvanan@gmail.com', '0123456789', 'admin', '123', 1)
 
-	-- Create Sequence
+	---- Create Sequence

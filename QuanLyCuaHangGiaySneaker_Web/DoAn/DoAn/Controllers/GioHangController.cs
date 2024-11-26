@@ -136,7 +136,7 @@ namespace DoAn.Controllers
 
             // Tạo đối tượng đơn hàng mới
             DATHANG donHang = new DATHANG();
-            donHang.ID_KhachHang = 1;
+            donHang.ID_KhachHang = (int)Session["user_id"];
             donHang.NgayDat = DateTime.Now;
             donHang.TongTien = ((decimal)ThanhTien()); 
         
