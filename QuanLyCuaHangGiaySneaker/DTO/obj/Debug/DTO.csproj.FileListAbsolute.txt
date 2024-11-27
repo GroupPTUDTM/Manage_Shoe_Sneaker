@@ -1,0 +1,7 @@
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\bin\Debug\DTO.dll.config
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\bin\Debug\DTO.dll
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\bin\Debug\DTO.pdb
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.dll
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.pdb

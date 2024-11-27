@@ -1,0 +1,10 @@
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DAL.dll
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DAL.pdb
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DTO.dll
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DTO.pdb
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DTO.dll.config
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.dll
+D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.pdb
