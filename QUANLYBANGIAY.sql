@@ -204,17 +204,17 @@ INSERT INTO DATHANG (ID_KhachHang, NgayDat, SoLuong) VALUES
     (10, '2023-01-10', 5);
 
 -- Thêm dữ liệu vào bảng CT_DATHANG
-INSERT INTO CT_DATHANG (ID_CTDatHang, ID_DatHang, ID_SanPham, SoLuong, DonViGia) VALUES
-    (1, 1, 1, 2, 79.99),
-    (2, 2, 3, 1, 99.99),
-    (3, 3, 5, 1, 69.99),
-    (4, 4, 7, 4, 49.99),
-    (5, 5, 9, 2, 129.99),
-    (6, 6, 2, 1, 89.99),
-    (7, 7, 4, 3, 109.99),
-    (8, 8, 6, 2, 79.99),
-    (9, 9, 8, 1, 59.99),
-    (10, 10, 10, 5, 139.99);
+INSERT INTO CT_DATHANG (ID_DatHang, ID_SanPham, SoLuong, DonViGia) VALUES
+    (1, 1, 2, 79.99),
+    (2, 3, 1, 99.99),
+    (3, 5, 1, 69.99),
+    (4, 7, 4, 49.99),
+    (5, 9, 2, 129.99),
+    (6, 2, 1, 89.99),
+    (7, 4, 3, 109.99),
+    (8, 6, 2, 79.99),
+    (9, 8, 1, 59.99),
+    (10, 10, 5, 139.99);
 
 -- Sửa bảng DATHANG
 ALTER TABLE DATHANG
