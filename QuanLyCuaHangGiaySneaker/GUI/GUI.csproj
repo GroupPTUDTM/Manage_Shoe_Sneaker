@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>GUI</RootNamespace>
     <AssemblyName>GUI</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BLL">
+      <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DTO">
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
@@ -55,11 +62,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLyLoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLyLoaiSanPham.Designer.cs">
+      <DependentUpon>frmQLyLoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLySanPham.Designer.cs">
+      <DependentUpon>frmQLySanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongKe.cs">
       <SubType>Form</SubType>
@@ -72,8 +97,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLyLoaiSanPham.resx">
+      <DependentUpon>frmQLyLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLySanPham.resx">
+      <DependentUpon>frmQLySanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
@@ -86,6 +120,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +140,57 @@
       <Project>{FCD977C8-AD25-42E2-A289-378876674FB9}</Project>
       <Name>Module_LogIn</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analyst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoe1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analyst1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

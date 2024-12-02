@@ -8,3 +8,13 @@ D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.dll
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DAL.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DAL.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DTO.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\bin\Debug\DTO.dll.config
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DAL\obj\Debug\DAL.pdb

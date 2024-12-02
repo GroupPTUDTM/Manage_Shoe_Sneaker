@@ -16,5 +16,10 @@ namespace BLL
         {
             return _dalDATHANG.GetDATHANGs();
         }
+        public DATHANG getDATHANG(int id)
+        {
+            return _dalDATHANG.getDATHANG(id);
+        }
+
     }
 }

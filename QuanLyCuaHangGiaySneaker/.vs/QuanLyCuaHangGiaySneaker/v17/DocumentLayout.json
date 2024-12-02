@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CHITO\\Do_an_tot_nghiep\\project_PTUD_AI\\QuanLyCuaHangGiaySneaker\\",
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|d:\\chito\\do_an_tot_nghiep\\project_ptud_ai\\quanlycuahanggiaysneaker\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|c:\\users\\admin\\desktop\\code\\ptpm\\doan\\manage_shoe_sneaker\\quanlycuahanggiaysneaker\\gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmQLySanPham.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs",
+              "RelativeDocumentMoniker": "GUI\\frmQLySanPham.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs [Design]",
+              "RelativeToolTip": "GUI\\frmQLySanPham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T03:58:42.85Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\CHITO\\Do_an_tot_nghiep\\project_PTUD_AI\\QuanLyCuaHangGiaySneaker\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\CHITO\\Do_an_tot_nghiep\\project_PTUD_AI\\QuanLyCuaHangGiaySneaker\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "frmQLySanPham.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs",
+              "RelativeDocumentMoniker": "GUI\\frmQLySanPham.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs",
+              "RelativeToolTip": "GUI\\frmQLySanPham.cs",
+              "ViewState": "AgIAAFgBAAAAAAAAAAAAAGQBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T10:20:16.87Z",
+              "WhenOpened": "2024-12-01T18:24:10.405Z",
               "EditorCaption": ""
             }
           ]

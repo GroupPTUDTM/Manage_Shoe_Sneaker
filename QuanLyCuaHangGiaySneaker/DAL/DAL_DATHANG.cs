@@ -16,5 +16,10 @@ namespace DAL
             var data = from dh in _dbcontext.DATHANGs select dh;
             return data.ToList();
         }
+        public DATHANG getDATHANG(int id)
+        {
+            return GetDATHANGs().FirstOrDefault(dh => dh.ID_DatHang == id);
+        }
+
     }
 }

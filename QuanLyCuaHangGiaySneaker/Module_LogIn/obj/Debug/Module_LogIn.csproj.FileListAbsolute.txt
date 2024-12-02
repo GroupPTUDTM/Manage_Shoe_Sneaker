@@ -19,3 +19,14 @@ D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\Module_LogIn\
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.csproj.CopyComplete
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.dll
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\bin\Debug\Module_LogIn.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\bin\Debug\Module_LogIn.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\bin\Debug\Guna.UI2.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.control_LogIn.resources
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_L.F8947BA6.Up2Date
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\Module_LogIn\obj\Debug\Module_LogIn.pdb

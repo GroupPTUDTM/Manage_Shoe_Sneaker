@@ -60,7 +60,7 @@ namespace DTO
     #endregion
 		
 		public QLBGsDataContext() : 
-				base(global::DTO.Properties.Settings.Default.QLBGsConnectionString, mappingSource)
+				base(global::DTO.Properties.Settings.Default.QLBGsConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

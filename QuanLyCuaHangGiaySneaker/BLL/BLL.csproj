@@ -31,11 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL">
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
-    <Reference Include="DTO">
-      <HintPath>..\DAL\bin\Debug\DTO.dll</HintPath>
+    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,7 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_DANHMUC.cs" />
     <Compile Include="BLL_DATHANG.cs" />
+    <Compile Include="BLL_HINHANH.cs" />
+    <Compile Include="BLL_MAU.cs" />
+    <Compile Include="BLL_SANPHAM.cs" />
+    <Compile Include="BLL_Size.cs" />
+    <Compile Include="BLL_THUONGHIEU.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

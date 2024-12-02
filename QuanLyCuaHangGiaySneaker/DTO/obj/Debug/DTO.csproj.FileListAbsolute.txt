@@ -5,3 +5,10 @@ D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.dll
 D:\CHITO\Do_an_tot_nghiep\project_PTUD_AI\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\bin\Debug\DTO.dll.config
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\bin\Debug\DTO.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.dll
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\DTO\obj\Debug\DTO.pdb

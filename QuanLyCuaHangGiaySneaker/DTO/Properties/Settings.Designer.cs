@@ -12,7 +12,7 @@ namespace DTO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,10 +26,22 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Admin-PC;Initial Catalog=QLBGs;User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-QNLF6505;Initial Catalog=QLBGs;Integrated Security=True;Trust " +
+            "Server Certificate=True")]
         public string QLBGsConnectionString {
             get {
                 return ((string)(this["QLBGsConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-QNLF6505;Initial Catalog=QLBGs;Integrated Security=True;Encryp" +
+            "t=True;TrustServerCertificate=True")]
+        public string QLBGsConnectionString1 {
+            get {
+                return ((string)(this["QLBGsConnectionString1"]));
             }
         }
     }
