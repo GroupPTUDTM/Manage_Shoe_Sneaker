@@ -46,7 +46,6 @@ C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneak
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\obj\Debug\GUI.pdb
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\obj\Debug\GUI.frmQLySanPham.resources
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\obj\Debug\GUI.frmDashboard.resources
-C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\obj\Debug\GUI.frmQLyLoaiSanPham.resources
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\bin\Debug\BLL.dll
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\bin\Debug\DTO.dll
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\bin\Debug\DAL.dll
@@ -54,3 +53,5 @@ C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneak
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\bin\Debug\DTO.pdb
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\bin\Debug\DTO.dll.config
 C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\bin\Debug\DAL.pdb
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\obj\Debug\GUI.frmQLyDanhMuc.resources
+C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker\GUI\obj\Debug\GUI.frmQLyThuongHieu.resources

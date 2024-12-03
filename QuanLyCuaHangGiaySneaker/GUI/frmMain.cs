@@ -85,10 +85,10 @@ namespace GUI
             btnCategory.BackColor = Color.FromArgb(46, 51, 73);
 
             this.PnlFormLoader.Controls.Clear();
-            frmQLyLoaiSanPham frmQLyLoaiSanPham1 = new frmQLyLoaiSanPham() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmQLyLoaiSanPham1.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(frmQLyLoaiSanPham1);
-            frmQLyLoaiSanPham1.Show();
+            frmQLyDanhMuc frmQLyDanhMuc1 = new frmQLyDanhMuc() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmQLyDanhMuc1.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(frmQLyDanhMuc1);
+            frmQLyDanhMuc1.Show();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
@@ -109,6 +109,12 @@ namespace GUI
             pnlNav.Height = btnBrand.Height;
             pnlNav.Top = btnBrand.Top;
             btnBrand.BackColor = Color.FromArgb(46, 51, 73);
+
+            this.PnlFormLoader.Controls.Clear();
+            frmQLyThuongHieu frmQLyThuongHieu1 = new frmQLyThuongHieu() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmQLyThuongHieu1.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(frmQLyThuongHieu1);
+            frmQLyThuongHieu1.Show();
         }
 
         private void btnAnalyst_Click(object sender, EventArgs e)

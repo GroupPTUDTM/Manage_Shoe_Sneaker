@@ -31,19 +31,18 @@ namespace GUI
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlNav = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTittle = new System.Windows.Forms.Label();
-            this.PnlFormLoader = new System.Windows.Forms.Panel();
-            this.pbClose = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAnalyst = new System.Windows.Forms.Button();
             this.btnBrand = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTittle = new System.Windows.Forms.Label();
+            this.PnlFormLoader = new System.Windows.Forms.Panel();
+            this.pbClose = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
@@ -74,11 +73,101 @@ namespace GUI
             this.panel3.Size = new System.Drawing.Size(3, 100);
             this.panel3.TabIndex = 2;
             // 
+            // btnAnalyst
+            // 
+            this.btnAnalyst.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAnalyst.FlatAppearance.BorderSize = 0;
+            this.btnAnalyst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalyst.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnalyst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnAnalyst.Image = global::GUI.Properties.Resources.analyst;
+            this.btnAnalyst.Location = new System.Drawing.Point(0, 535);
+            this.btnAnalyst.Name = "btnAnalyst";
+            this.btnAnalyst.Size = new System.Drawing.Size(218, 42);
+            this.btnAnalyst.TabIndex = 1;
+            this.btnAnalyst.Text = "Thống kê";
+            this.btnAnalyst.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAnalyst.UseVisualStyleBackColor = true;
+            this.btnAnalyst.Click += new System.EventHandler(this.btnAnalyst_Click);
+            this.btnAnalyst.Leave += new System.EventHandler(this.btnAnalyst_Leave);
+            // 
+            // btnBrand
+            // 
+            this.btnBrand.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBrand.FlatAppearance.BorderSize = 0;
+            this.btnBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnBrand.Image = global::GUI.Properties.Resources.business;
+            this.btnBrand.Location = new System.Drawing.Point(0, 270);
+            this.btnBrand.Name = "btnBrand";
+            this.btnBrand.Size = new System.Drawing.Size(218, 42);
+            this.btnBrand.TabIndex = 1;
+            this.btnBrand.Text = "Thương hiệu";
+            this.btnBrand.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBrand.UseVisualStyleBackColor = true;
+            this.btnBrand.Click += new System.EventHandler(this.btnBrand_Click);
+            this.btnBrand.Leave += new System.EventHandler(this.btnBrand_Leave);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduct.FlatAppearance.BorderSize = 0;
+            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnProduct.Image = global::GUI.Properties.Resources.shoe;
+            this.btnProduct.Location = new System.Drawing.Point(0, 228);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(218, 42);
+            this.btnProduct.TabIndex = 1;
+            this.btnProduct.Text = "Sản phẩm";
+            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            this.btnProduct.Leave += new System.EventHandler(this.btnProduct_Leave);
+            // 
+            // btnCategory
+            // 
+            this.btnCategory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategory.FlatAppearance.BorderSize = 0;
+            this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnCategory.Image = global::GUI.Properties.Resources.product;
+            this.btnCategory.Location = new System.Drawing.Point(0, 186);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(218, 42);
+            this.btnCategory.TabIndex = 1;
+            this.btnCategory.Text = "Danh mục";
+            this.btnCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCategory.UseVisualStyleBackColor = true;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
+            this.btnCategory.Leave += new System.EventHandler(this.btnCategory_Leave);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDashboard.Image = global::GUI.Properties.Resources.home;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 144);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(218, 42);
+            this.btnDashboard.TabIndex = 1;
+            this.btnDashboard.Text = "Bảng điều khiển";
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pnlNav);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -93,28 +182,16 @@ namespace GUI
             this.pnlNav.Size = new System.Drawing.Size(3, 100);
             this.pnlNav.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.label2.Location = new System.Drawing.Point(36, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Some user text here";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 90);
+            this.label1.Location = new System.Drawing.Point(44, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(114, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "User name";
+            this.label1.Text = "Tên người dùng";
             // 
             // lblTittle
             // 
@@ -150,102 +227,12 @@ namespace GUI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnAnalyst
-            // 
-            this.btnAnalyst.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAnalyst.FlatAppearance.BorderSize = 0;
-            this.btnAnalyst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnalyst.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnalyst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAnalyst.Image = global::GUI.Properties.Resources.analyst;
-            this.btnAnalyst.Location = new System.Drawing.Point(0, 535);
-            this.btnAnalyst.Name = "btnAnalyst";
-            this.btnAnalyst.Size = new System.Drawing.Size(218, 42);
-            this.btnAnalyst.TabIndex = 1;
-            this.btnAnalyst.Text = "Analyst";
-            this.btnAnalyst.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnAnalyst.UseVisualStyleBackColor = true;
-            this.btnAnalyst.Click += new System.EventHandler(this.btnAnalyst_Click);
-            this.btnAnalyst.Leave += new System.EventHandler(this.btnAnalyst_Leave);
-            // 
-            // btnBrand
-            // 
-            this.btnBrand.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBrand.FlatAppearance.BorderSize = 0;
-            this.btnBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrand.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnBrand.Image = global::GUI.Properties.Resources.business;
-            this.btnBrand.Location = new System.Drawing.Point(0, 270);
-            this.btnBrand.Name = "btnBrand";
-            this.btnBrand.Size = new System.Drawing.Size(218, 42);
-            this.btnBrand.TabIndex = 1;
-            this.btnBrand.Text = "Brand";
-            this.btnBrand.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnBrand.UseVisualStyleBackColor = true;
-            this.btnBrand.Click += new System.EventHandler(this.btnBrand_Click);
-            this.btnBrand.Leave += new System.EventHandler(this.btnBrand_Leave);
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProduct.FlatAppearance.BorderSize = 0;
-            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnProduct.Image = global::GUI.Properties.Resources.shoe;
-            this.btnProduct.Location = new System.Drawing.Point(0, 228);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(218, 42);
-            this.btnProduct.TabIndex = 1;
-            this.btnProduct.Text = "Product";
-            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnProduct.UseVisualStyleBackColor = true;
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            this.btnProduct.Leave += new System.EventHandler(this.btnProduct_Leave);
-            // 
-            // btnCategory
-            // 
-            this.btnCategory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategory.FlatAppearance.BorderSize = 0;
-            this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategory.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnCategory.Image = global::GUI.Properties.Resources.product;
-            this.btnCategory.Location = new System.Drawing.Point(0, 186);
-            this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(218, 42);
-            this.btnCategory.TabIndex = 1;
-            this.btnCategory.Text = "Category";
-            this.btnCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCategory.UseVisualStyleBackColor = true;
-            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
-            this.btnCategory.Leave += new System.EventHandler(this.btnCategory_Leave);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDashboard.Image = global::GUI.Properties.Resources.home;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 144);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(218, 42);
-            this.btnDashboard.TabIndex = 1;
-            this.btnDashboard.Text = "Dashboad";
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
             // 
             // frmMain
             // 
@@ -256,7 +243,6 @@ namespace GUI
             this.Controls.Add(this.pbClose);
             this.Controls.Add(this.PnlFormLoader);
             this.Controls.Add(this.lblTittle);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -280,7 +266,6 @@ namespace GUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAnalyst;
         private System.Windows.Forms.Button btnBrand;

@@ -22,19 +22,19 @@ namespace GUI
         BLL_Size s = new BLL_Size();
         BLL_MAU m = new BLL_MAU();
 
-        private string selectedImagePath = "";
+        bool flag = false;
+
         GroupBox gbChange;
-        Label lblImageName;
         TextBox txtIDSanPham;
         TextBox txtTenSanPham;
         ComboBox cmbThuongHieu;
         ComboBox cmbLoai;
+        ComboBox cmbAnh;
         ComboBox cmbMau;
         ComboBox cmbSize;
         TextBox txtMota;
         TextBox txtDonViGia;
         TextBox txtSoLuongTon;
-        Button btnAnh;
         Button btnSave;
         Button btnCancel;
 
@@ -42,17 +42,18 @@ namespace GUI
         {
             InitializeComponent();
             InitializeDatagridview();
+            loadDatagridview(null);
+
             this.dtgvProduct.CellClick += DtgvProduct_CellClick;
             this.dtgvProduct.CellLeave += DtgvProduct_CellLeave;
         }
-
-        
 
         private void InitializeDatagridview()
         {
             dtgvProduct.Columns.Clear();
         
             dtgvProduct.EnableHeadersVisualStyles = false;
+            dtgvProduct.ReadOnly = true;
             dtgvProduct.DefaultCellStyle.SelectionBackColor = Color.Purple;
             dtgvProduct.DefaultCellStyle.SelectionForeColor = Color.White;
             dtgvProduct.ColumnHeadersDefaultCellStyle.BackColor = Color.Purple;
@@ -60,15 +61,10 @@ namespace GUI
             dtgvProduct.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dtgvProduct.DefaultCellStyle.ForeColor = Color.Black;
 
-            getData();
-
             dtgvProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
-        private void getListProduct()
-        {
 
-        }
-        private DataTable ConvertListToDataTable(List<SANPHAM> sanPhams)
+        private async Task<DataTable> ConvertListToDataTable(List<SANPHAM> sanPhams)
         {
             DataTable dataTable = new DataTable();
 
@@ -80,35 +76,35 @@ namespace GUI
             dataTable.Columns.Add("Size", typeof(string));
             dataTable.Columns.Add("Màu", typeof(string));
             dataTable.Columns.Add("Mô tả", typeof(string));
-            dataTable.Columns.Add("Đơn vị giá", typeof(double));
+            dataTable.Columns.Add("Đơn vị giá", typeof(decimal));
             dataTable.Columns.Add("Số lượng tồn", typeof(int));
 
             foreach (var sp in sanPhams)
             {
                 var thuongHieu = sp.ID_ThuongHieu.HasValue
-                    ? th.getTHUONGHIEU(sp.ID_ThuongHieu.Value)
+                    ? await th.getTHUONGHIEU(sp.ID_ThuongHieu.Value)
                     : null;
                 var loai = sp.ID_DanhMuc.HasValue
-                    ? dm.getDANHMUC(sp.ID_DanhMuc.Value)
+                    ? await dm.getDANHMUC(sp.ID_DanhMuc.Value)
                     : null;
                 var anh = sp.ID_Anh.HasValue
-                    ? ha.getHINHANH(sp.ID_Anh.Value)
+                    ? await ha.getHINHANH(sp.ID_Anh.Value)
                     : null;
                 var size = sp.ID_Size.HasValue
-                    ? s.getSIZE(sp.ID_Size.Value)
+                    ? await s.getSize(sp.ID_Size.Value)
                     : null;
                 var mau = sp.ID_Mau.HasValue
-                    ? m.getMAU(sp.ID_Mau.Value)
+                    ? await m.getMAU(sp.ID_Mau.Value)
                     : null;
 
                 dataTable.Rows.Add(
                     sp.ID_SanPham,
                     sp.TenSanPham,
-                    thuongHieu.TenThuongHieu,
-                    loai.TenDanhMuc,
-                    anh.AnhChinh,
-                    size.Size1,
-                    mau.TenMau,
+                    thuongHieu?.TenThuongHieu,
+                    loai?.TenDanhMuc,
+                    anh?.AnhChinh,
+                    size?.Size1,
+                    mau?.TenMau,
                     sp.Mota,
                     sp.DonViGia,
                     sp.SoLuongTon
@@ -116,11 +112,18 @@ namespace GUI
             }
             return dataTable;
         }
-        private async void getData()
+
+        private async void loadDatagridview(List<SANPHAM> sps)
         {
-            // Lấy danh sách sản phẩm bất đồng bộ từ BLL
-            var sanPhams = await sp.getSANPHAMs();
-            dtgvProduct.DataSource = ConvertListToDataTable(sanPhams);
+            dtgvProduct.DataSource = null;
+
+            if (sps == null || sps.Count == 0)
+            {
+                sps = await sp.getSANPHAMs();
+
+            }
+            var dataTable = await ConvertListToDataTable(sps);
+            dtgvProduct.DataSource = dataTable;
         }
 
         private void DtgvProduct_CellLeave(object sender, DataGridViewCellEventArgs e)
@@ -163,38 +166,83 @@ namespace GUI
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            if (dtgvProduct.SelectedCells.Count > 0)
+            {
+                DataGridViewCell selectedCell = dtgvProduct.SelectedCells[0];
+                DataGridViewRow selectedRow = selectedCell.OwningRow;
+
+                if (int.TryParse(selectedRow.Cells[0].Value?.ToString(), out int productId))
+                {
+                    DialogResult confirmResult = MessageBox.Show(
+                        "Bạn có chắc chắn muốn xóa sản phẩm này?",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        BLL_SANPHAM bllSanPham = new BLL_SANPHAM();
+                        bool isDeleted = await bllSanPham.DeleteSANPHAM(productId);
+
+                        if (isDeleted)
+                        {
+                            MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            loadDatagridview(null);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xác định ID của sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một ô để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
 
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<SANPHAM> sANPHAMs = await sp.SearchSANPHAMByName(txtSearch.Text);
+            loadDatagridview(sANPHAMs);
         }
+
         private void createEditI(string tittle,List<string> row)
         {
+            flag = false;
             createGB();
             gbChange.Text = tittle;
             btnSave.Text = "Sửa";
             btnCancel.Text = "Hủy";
             txtIDSanPham.Text = row[0];
+            txtIDSanPham.Enabled = false;
             txtTenSanPham.Text = row[1];
             cmbThuongHieu.Text = row[2];
             cmbLoai.Text = row[3];
-            lblImageName.Text = row[4];
+            cmbAnh.Text = row[4];
             cmbSize.Text = row[5];
             cmbMau.Text = row[6];
             txtMota.Text = row[7];
             txtDonViGia.Text = row[8];
-            txtSoLuongTon.Text = row[9];
+            txtSoLuongTon.Text = row[9];       
         }
         private void createAddI(string tittle)
         {
+            flag = true;
             createGB();
             gbChange.Text = tittle;
             btnSave.Text = "Thêm";
-            btnCancel.Text = "Hủy";
+            btnCancel.Text = "Hủy";          
         }
         private void createGB()
         {
@@ -234,7 +282,7 @@ namespace GUI
             gbChange.Controls.Add(cmbThuongHieu);
 
             Label lblLoai = new Label();
-            lblLoai.Text = "Loại:";
+            lblLoai.Text = "Danh mục:";
             lblLoai.Location = new Point(20, 250);
             cmbLoai = new ComboBox();
             cmbLoai.Location = new Point(150, 250);
@@ -245,17 +293,11 @@ namespace GUI
             Label lblAnh = new Label();
             lblAnh.Text = "Ảnh:";
             lblAnh.Location = new Point(20, 310);
-            btnAnh = new Button();
-            btnAnh.Text = "Tải ảnh lên";
-            btnAnh.Location = new Point(150, 310);
-            btnAnh.Width = 200;
-            lblImageName = new Label();
-            lblImageName.Location = new Point(150, 335);
-            lblImageName.AutoSize = true;
+            cmbAnh = new ComboBox();
+            cmbAnh.Location = new Point(150, 310);
+            cmbAnh.Width = 200;
             gbChange.Controls.Add(lblAnh);
-            gbChange.Controls.Add(btnAnh);
-            gbChange.Controls.Add(lblImageName);
-            btnAnh.Click += btnAnh_Click;
+            gbChange.Controls.Add(cmbAnh);
 
 
             Label lblSize = new Label();
@@ -306,104 +348,225 @@ namespace GUI
             btnSave = new Button();
             btnSave.Location = new Point(400, 370);
             btnSave.Size = new System.Drawing.Size(80, 30);
+            btnSave.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
             btnSave.BackColor = Color.Cyan;
             btnSave.ForeColor = Color.Black;
-            btnSave.Click += btnSave_Click;
+            btnSave.Cursor = Cursors.Hand;
             gbChange.Controls.Add(btnSave);
+            btnSave.Click += async (sender, e) => await btnSave_Click(sender, e);
 
             btnCancel = new Button();
             btnCancel.Location = new Point(520, 370);
             btnCancel.Size = new System.Drawing.Size(80, 30);
+            btnCancel.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
             btnCancel.BackColor = Color.Yellow;
             btnCancel.ForeColor = Color.Black;
-            btnCancel.Click += btnCancel_Click;
+            btnCancel.Cursor = Cursors.Hand;
             gbChange.Controls.Add(btnCancel);
-
+            btnCancel.Click += btnCancel_Click;
 
             this.Controls.Add(gbChange);
             getcmbMau();
+            getcmbAnh();
             getcmbLoai();
             getcmbSize();
             getcmbThuongHieu();
         }
 
-        private void btnAnh_Click(object sender, EventArgs e)
+        private List<string> getText()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog.Title = "Chọn ảnh";
+            List<string> lt = new List<string>();
+            lt.Add(txtIDSanPham.Text);
+            lt.Add(txtTenSanPham.Text);
+            lt.Add(cmbThuongHieu.Text);
+            lt.Add(cmbLoai.Text);
+            lt.Add(cmbAnh.Text);
+            lt.Add(cmbSize.Text);
+            lt.Add(cmbMau.Text);
+            lt.Add(txtMota.Text);
+            lt.Add(txtDonViGia.Text);
+            lt.Add(txtSoLuongTon.Text);
+            return lt;
+        }
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+        private bool validate_Product()
+        {
+            if (string.IsNullOrWhiteSpace(txtIDSanPham.Text))
             {
-                selectedImagePath = openFileDialog.FileName;
+                MessageBox.Show("Vui lòng nhập ID Sản Phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDSanPham.Focus();
+                return false;
+            }
 
-                if (lblImageName.Text != string.Empty)
+            if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Tên Sản Phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenSanPham.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbThuongHieu.Text))
+            {
+                MessageBox.Show("Vui lòng chọn Thương Hiệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbThuongHieu.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbLoai.Text))
+            {
+                MessageBox.Show("Vui lòng chọn Loại Sản Phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbLoai.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbAnh.Text))
+            {
+                MessageBox.Show("Vui lòng chọn Ảnh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbAnh.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbSize.Text))
+            {
+                MessageBox.Show("Vui lòng chọn Size!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbSize.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbMau.Text))
+            {
+                MessageBox.Show("Vui lòng chọn Màu Sắc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbMau.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMota.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Mô Tả!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMota.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDonViGia.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Đơn Vị Giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDonViGia.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSoLuongTon.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Số Lượng Tồn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSoLuongTon.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private async Task btnSave_Click(object sender, EventArgs e)
+        {
+            if (validate_Product())
+            {
+                List<String> lt = getText();
+                var thuonghieu = await th.getTHUONGHIEUByName(lt[2]);
+                var loai = await dm.getDANHMUCByName(lt[3]);
+                var anh = await ha.getHINHANHByName(lt[4]);
+                var size = await s.getSizeBySize(int.Parse(lt[5]));
+                var mau = await m.getMAUByName(lt[6]);
+                SANPHAM sanpham = new SANPHAM
                 {
-                    lblImageName.Text = string.Empty;
+                    ID_SanPham = int.Parse(lt[0]),
+                    TenSanPham = lt[1],
+                    ID_ThuongHieu = thuonghieu.ID_ThuongHieu,
+                    ID_DanhMuc = loai.ID_DanhMuc,
+                    ID_Anh = anh.ID_Anh,
+                    ID_Size = size.ID_Size,
+                    ID_Mau = mau.ID_Mau,
+                    Mota = lt[7],
+                    DonViGia = decimal.Parse(lt[8]),
+                    SoLuongTon = int.Parse(lt[9])
+                };
+                if (flag == true)
+                {
+                    var result = await sp.AddSANPHAM(sanpham);
+
+                    if (result.IsSuccess)
+                    {
+                        MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnCancel_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Đã xảy ra lỗi khi thêm sản phẩm: {result.ErrorMessage}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
-            
-                lblImageName.Text = Path.GetFileName(selectedImagePath);
-                
-                MessageBox.Show("Ảnh đã được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    var result = await sp.UpdateSANPHAM(sanpham);
+                    if (result.IsSuccess)
+                    {
+                        MessageBox.Show("Sửa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnCancel_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Đã xảy ra lỗi khi sửa sản phẩm: {result.ErrorMessage}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(selectedImagePath))
-            {
-                MessageBox.Show("Vui lòng chọn ảnh trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            string destinationDirectory = @"C:\Users\ADMIN\Desktop\code\ptpm\doan\Manage_Shoe_Sneaker\QuanLyCuaHangGiaySneaker_Web\DoAn\DoAn\assets\Images";
-
-            if (!Directory.Exists(destinationDirectory))
-            {
-                Directory.CreateDirectory(destinationDirectory);
-            }
-
-            string fileName = Path.GetFileName(selectedImagePath);
-            string destinationFilePath = Path.Combine(destinationDirectory, fileName);
-
-            try
-            {
-                File.Copy(selectedImagePath, destinationFilePath, true);
-                MessageBox.Show("Ảnh đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi khi lưu ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        }      
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             gbChange.Hide();
             gbProduct.Show();
+            loadDatagridview(null);
         }
-        private void getcmbMau()
+        private async void getcmbMau()
         {
             cmbMau.Items.Clear();
-            cmbMau.Items.AddRange(m.getMAUs().Select(x => x.TenMau).ToArray());
+            var maus = await m.getMAUs();
+
+            cmbMau.Items.AddRange(maus.Select(x => x.TenMau).ToArray());
+            cmbMau.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMau.SelectedIndex = 0;
         }
-        private void getcmbThuongHieu()
+        private async void getcmbAnh()
+        {
+            cmbAnh.Items.Clear();
+            var anh = await ha.getHINHANHs();
+
+            cmbAnh.Items.AddRange(anh.Select(x => x.AnhChinh).ToArray());
+            cmbAnh.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAnh.SelectedIndex = 0;
+        }
+        private async void getcmbThuongHieu()
         {
             cmbThuongHieu.Items.Clear();
-            cmbThuongHieu.Items.AddRange(th.getTHUONGHIEUs().Select(x => x.TenThuongHieu).ToArray());
+            var thuongHieus = await th.getTHUONGHIEUs();
+
+            cmbThuongHieu.Items.AddRange(thuongHieus.Select(x => x.TenThuongHieu).ToArray());
+            cmbThuongHieu.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbThuongHieu.SelectedIndex = 0;
         }
-        private void getcmbLoai()
+        private async void getcmbLoai()
         {
             cmbLoai.Items.Clear();
-            cmbLoai.Items.AddRange(dm.getDANHMUCs().Select(x => x.TenDanhMuc).ToArray());
+            var loais = await dm.getDANHMUCs();
+
+            cmbLoai.Items.AddRange(loais.Select(x => x.TenDanhMuc).ToArray());
+            cmbLoai.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbLoai.SelectedIndex = 0;
         }
-        private void getcmbSize()
+        private async void getcmbSize()
         {
             cmbSize.Items.Clear();
-            cmbSize.Items.AddRange(s.getSizes().Select(x => x.Size1.ToString()).ToArray());
+            var sizes = await s.getSizes();
+
+            cmbSize.Items.AddRange(sizes.Select(x => x.Size1.ToString()).ToArray());
+            cmbSize.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSize.SelectedIndex = 0;
         }
 

@@ -12,13 +12,38 @@ namespace BLL
     {
         DAL_THUONGHIEU _dalTHUONGHIEU = new DAL_THUONGHIEU();
         public BLL_THUONGHIEU() { }
-        public List<THUONGHIEU> getTHUONGHIEUs()
+        public async Task<List<THUONGHIEU>> getTHUONGHIEUs()
         {
-            return _dalTHUONGHIEU.getTHUONGHIEUs();
+            return await _dalTHUONGHIEU.getTHUONGHIEUs();
         }
-        public THUONGHIEU getTHUONGHIEU(int id)
+
+        public async Task<THUONGHIEU> getTHUONGHIEU(int id)
         {
-            return _dalTHUONGHIEU.getTHUONGHIEU(id);
+            return await _dalTHUONGHIEU.getTHUONGHIEU(id);
+        }
+        public async Task<(bool IsSuccess, string ErrorMessage)> AddTHUONGHIEU(THUONGHIEU newTHUONGHIEU)
+        {
+            return await _dalTHUONGHIEU.AddTHUONGHIEU(newTHUONGHIEU);
+        }
+
+        public async Task<bool> DeleteTHUONGHIEU(int id)
+        {
+            return await _dalTHUONGHIEU.DeleteTHUONGHIEU(id);
+        }
+
+        public async Task<(bool IsSuccess, string ErrorMessage)> UpdateTHUONGHIEU(THUONGHIEU updatedTHUONGHIEU)
+        {
+            return await _dalTHUONGHIEU.UpdateTHUONGHIEU(updatedTHUONGHIEU);
+        }
+
+        public async Task<List<THUONGHIEU>> SearchTHUONGHIEUByName(string name)
+        {
+            return await _dalTHUONGHIEU.SearchTHUONGHIEUByName(name);
+        }
+
+        public async Task<THUONGHIEU> getTHUONGHIEUByName(string name)
+        {
+            return await _dalTHUONGHIEU.getTHUONGHIEUByName(name);
         }
     }
 }

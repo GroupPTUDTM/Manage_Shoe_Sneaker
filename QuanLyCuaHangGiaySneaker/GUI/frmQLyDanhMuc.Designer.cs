@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmQLySanPham
+    partial class frmQLyDanhMuc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDashboard = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbProduct = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gbCategory = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dtgvProduct = new System.Windows.Forms.DataGridView();
+            this.dtgvCategory = new System.Windows.Forms.DataGridView();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.gbProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct)).BeginInit();
+            this.gbCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,53 +51,37 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(733, 40);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
-            // btnDashboard
+            // gbCategory
             // 
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDashboard.Image = global::GUI.Properties.Resources.shoe;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 0);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(257, 40);
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "QUẢN LÝ SẢN PHẨM";
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.gbCategory.Controls.Add(this.label2);
+            this.gbCategory.Controls.Add(this.txtSearch);
+            this.gbCategory.Controls.Add(this.btnSearch);
+            this.gbCategory.Controls.Add(this.btnDelete);
+            this.gbCategory.Controls.Add(this.btnEdit);
+            this.gbCategory.Controls.Add(this.btnAdd);
+            this.gbCategory.Controls.Add(this.dtgvCategory);
+            this.gbCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCategory.ForeColor = System.Drawing.Color.White;
+            this.gbCategory.Location = new System.Drawing.Point(0, 45);
+            this.gbCategory.Name = "gbCategory";
+            this.gbCategory.Size = new System.Drawing.Size(733, 455);
+            this.gbCategory.TabIndex = 9;
+            this.gbCategory.TabStop = false;
+            this.gbCategory.Text = "Danh sách danh mục";
             // 
-            // gbProduct
+            // label2
             // 
-            this.gbProduct.Controls.Add(this.label1);
-            this.gbProduct.Controls.Add(this.txtSearch);
-            this.gbProduct.Controls.Add(this.btnSearch);
-            this.gbProduct.Controls.Add(this.btnDelete);
-            this.gbProduct.Controls.Add(this.btnEdit);
-            this.gbProduct.Controls.Add(this.btnAdd);
-            this.gbProduct.Controls.Add(this.dtgvProduct);
-            this.gbProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbProduct.ForeColor = System.Drawing.Color.White;
-            this.gbProduct.Location = new System.Drawing.Point(0, 45);
-            this.gbProduct.Name = "gbProduct";
-            this.gbProduct.Size = new System.Drawing.Size(733, 455);
-            this.gbProduct.TabIndex = 1;
-            this.gbProduct.TabStop = false;
-            this.gbProduct.Text = "Danh sách sản phẩm";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Tìm sản phẩm";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(9, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Tìm danh mục";
             // 
             // txtSearch
             // 
@@ -110,7 +94,6 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(561, 37);
@@ -124,7 +107,6 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(647, 142);
@@ -138,7 +120,6 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Location = new System.Drawing.Point(647, 106);
@@ -152,7 +133,6 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(647, 70);
@@ -163,46 +143,63 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dtgvProduct
+            // dtgvCategory
             // 
-            this.dtgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.dtgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvProduct.Location = new System.Drawing.Point(12, 70);
-            this.dtgvProduct.Name = "dtgvProduct";
-            this.dtgvProduct.Size = new System.Drawing.Size(629, 379);
-            this.dtgvProduct.TabIndex = 12;
+            this.dtgvCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCategory.Location = new System.Drawing.Point(12, 70);
+            this.dtgvCategory.Name = "dtgvCategory";
+            this.dtgvCategory.Size = new System.Drawing.Size(629, 379);
+            this.dtgvCategory.TabIndex = 12;
             // 
-            // frmQLySanPham
+            // btnDashboard
+            // 
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDashboard.Image = global::GUI.Properties.Resources.product;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 0);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(299, 40);
+            this.btnDashboard.TabIndex = 2;
+            this.btnDashboard.Text = "QUẢN LÝ DANH MỤC";
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            // 
+            // frmQLyDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 500);
-            this.Controls.Add(this.gbProduct);
+            this.Controls.Add(this.gbCategory);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmQLySanPham";
-            this.Text = "frmQLySanPham";
+            this.Name = "frmQLyDanhMuc";
+            this.Text = "frmQLyLoaiSanPham";
             this.panel1.ResumeLayout(false);
-            this.gbProduct.ResumeLayout(false);
-            this.gbProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct)).EndInit();
+            this.gbCategory.ResumeLayout(false);
+            this.gbCategory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.GroupBox gbProduct;
-        private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox gbCategory;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dtgvProduct;
+        private System.Windows.Forms.DataGridView dtgvCategory;
     }
 }

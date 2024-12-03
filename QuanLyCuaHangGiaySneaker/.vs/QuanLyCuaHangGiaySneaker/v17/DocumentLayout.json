@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|c:\\users\\admin\\desktop\\code\\ptpm\\doan\\manage_shoe_sneaker\\quanlycuahanggiaysneaker\\gui\\frmqlythuonghieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlythuonghieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|c:\\users\\admin\\desktop\\code\\ptpm\\doan\\manage_shoe_sneaker\\quanlycuahanggiaysneaker\\gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlysanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|c:\\users\\admin\\desktop\\code\\ptpm\\doan\\manage_shoe_sneaker\\quanlycuahanggiaysneaker\\gui\\frmqlythuonghieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlythuonghieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|c:\\users\\admin\\desktop\\code\\ptpm\\doan\\manage_shoe_sneaker\\quanlycuahanggiaysneaker\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|c:\\users\\admin\\desktop\\code\\ptpm\\doan\\manage_shoe_sneaker\\quanlycuahanggiaysneaker\\gui\\frmqlydanhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE95B556-002D-442F-84CC-8E53F9422422}|GUI\\GUI.csproj|solutionrelative:gui\\frmqlydanhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,26 +43,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmQLySanPham.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs",
-              "RelativeDocumentMoniker": "GUI\\frmQLySanPham.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs [Design]",
-              "RelativeToolTip": "GUI\\frmQLySanPham.cs [Design]",
+              "Title": "frmQLyThuongHieu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLyThuongHieu.cs",
+              "RelativeDocumentMoniker": "GUI\\frmQLyThuongHieu.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLyThuongHieu.cs [Design]",
+              "RelativeToolTip": "GUI\\frmQLyThuongHieu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T03:58:42.85Z",
+              "WhenOpened": "2024-12-03T16:47:18.603Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmQLySanPham.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs",
-              "RelativeDocumentMoniker": "GUI\\frmQLySanPham.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLySanPham.cs",
-              "RelativeToolTip": "GUI\\frmQLySanPham.cs",
-              "ViewState": "AgIAAFgBAAAAAAAAAAAAAGQBAAANAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmMain.cs",
+              "RelativeDocumentMoniker": "GUI\\frmMain.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmMain.cs",
+              "RelativeToolTip": "GUI\\frmMain.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAuwHQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T18:24:10.405Z",
+              "WhenOpened": "2024-12-03T16:45:43.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmQLyThuongHieu.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLyThuongHieu.cs",
+              "RelativeDocumentMoniker": "GUI\\frmQLyThuongHieu.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLyThuongHieu.cs",
+              "RelativeToolTip": "GUI\\frmQLyThuongHieu.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAcwL8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T16:29:30.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmQLyDanhMuc.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLyDanhMuc.cs",
+              "RelativeDocumentMoniker": "GUI\\frmQLyDanhMuc.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\code\\ptpm\\doan\\Manage_Shoe_Sneaker\\QuanLyCuaHangGiaySneaker\\GUI\\frmQLyDanhMuc.cs",
+              "RelativeToolTip": "GUI\\frmQLyDanhMuc.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAkwKkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T16:12:06.189Z",
               "EditorCaption": ""
             }
           ]
