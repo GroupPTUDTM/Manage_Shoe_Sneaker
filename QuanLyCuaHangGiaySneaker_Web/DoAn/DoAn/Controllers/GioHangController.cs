@@ -128,6 +128,12 @@ namespace DoAn.Controllers
         //}
         public ActionResult DatHang()
         {
+
+            // Kiểm tra người dùng đã đăng nhập hay chưa
+            if (Session["user_id"] == null)  // Kiểm tra session chứa thông tin đăng nhập
+            {
+                return RedirectToAction("DangNhap", "DangNhap");  // Chuyển hướng đến trang đăng nhập
+            }
             var lstGioHang = LayGioHang();  // Lấy giỏ hàng từ session
             if (lstGioHang.Count == 0)
             {

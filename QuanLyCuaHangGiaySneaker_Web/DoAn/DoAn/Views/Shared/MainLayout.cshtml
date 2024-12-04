@@ -48,7 +48,7 @@
                 <div>
                     @if (!string.IsNullOrEmpty(Session["TaiKhoan"] as string))
                     {
-                        <span class="navbar-sm-brand text-light text-decoration-none">Chào mừng, @(Session["TaiKhoan"] as string)! | <a href="@Url.Action("ViewProfile", "Home")"style="text-decoration:none;color:aliceblue">Thông tin cá nhân</a> | <a href="@Url.Action("DangXuat", "DangNhap")"style="text-decoration:none;color:aliceblue">Đăng xuất</a></span>
+                        <span class="navbar-sm-brand text-light text-decoration-none">Chào mừng, @(Session["TaiKhoan"] as string)! | <a href="@Url.Action("ViewProfile", "Home")" style="text-decoration:none;color:aliceblue">Thông tin cá nhân</a> | <a href="@Url.Action("DangXuat", "DangNhap")" style="text-decoration:none;color:aliceblue">Đăng xuất</a></span>
                         <div>
                             @Html.Partial("UserPartial")
                         </div>
@@ -78,7 +78,7 @@
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                       
+
 
                         <li class="nav-item">
                             <a class="nav-link" href="~/Home/Index">Home</a>
@@ -92,7 +92,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="~/Home/shop">Shop</a>
                         </li>
-                       
+
 
                     </ul>
 
@@ -239,28 +239,98 @@
 
     </script>
     <script>
-    $(document).ready(function () {
-        // Giá trị số lượng ban đầu
-        var quantity = parseInt($("#var-value").text());
+        $(document).ready(function () {
+            // Giá trị số lượng ban đầu
+            var quantity = parseInt($("#var-value").text());
 
-        // Giảm số lượng
-        $("#btn-minus").click(function () {
-            if (quantity > 1) {
-                quantity--;
+            // Giảm số lượng
+            $("#btn-minus").click(function () {
+                if (quantity > 1) {
+                    quantity--;
+                    $("#var-value").text(quantity);
+                    $("#product-quanity").val(quantity);
+                }
+            });
+
+            // Tăng số lượng
+            $("#btn-plus").click(function () {
+                quantity++;
                 $("#var-value").text(quantity);
                 $("#product-quanity").val(quantity);
+            });
+        });
+
+    </script>
+    <script>
+        // Configs
+        let liveChatBaseUrl = document.location.protocol + '//' + 'livechat.fpt.ai/v36/src'
+        let LiveChatSocketUrl = 'livechat.fpt.ai:443'
+        let FptAppCode = 'ee3e7a74b18813b7e6d2c29ee4f8e9c1'
+        let FptAppName = 'ChatBot'
+        // Define custom styles
+        let CustomStyles = {
+            // header
+            headerBackground: 'linear-gradient(86.7deg, #3353a2ff 0.85%, #31b7b7ff 98.94%)',
+            headerTextColor: '#ffffffff',
+            headerLogoEnable: false,
+            headerLogoLink: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png',
+            headerText: 'Hỗ trợ trực tuyến',
+            // main
+            primaryColor: '#6d9ccbff',
+            secondaryColor: '#ecececff',
+            primaryTextColor: '#ffffffff',
+            secondaryTextColor: '#000000DE',
+            buttonColor: '#b4b4b4ff',
+            buttonTextColor: '#ffffffff',
+            bodyBackgroundEnable: false,
+            bodyBackgroundLink: '',
+            avatarBot: 'https://chatbot-tools.fpt.ai/livechat-builder/img/bot.png',
+            sendMessagePlaceholder: 'Nhập tin nhắn',
+            // float button
+            floatButtonLogo: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png',
+            floatButtonTooltip: 'FPT.AI xin chào',
+            floatButtonTooltipEnable: false,
+            // start screen
+            customerLogo: 'https://chatbot-tools.fpt.ai/livechat-builder/img/bot.png',
+            customerWelcomeText: 'Vui lòng nhập tên của bạn',
+            customerButtonText: 'Bắt đầu',
+            prefixEnable: false,
+            prefixType: 'radio',
+            prefixOptions: ["Anh", "Chị"],
+            prefixPlaceholder: 'Danh xưng',
+            // custom css
+            css: ''
+        }
+        // Get bot code from url if FptAppCode is empty
+        if (!FptAppCode) {
+            let appCodeFromHash = window.location.hash.substr(1)
+            if (appCodeFromHash.length === 32) {
+                FptAppCode = appCodeFromHash
             }
-        });
-
-        // Tăng số lượng
-        $("#btn-plus").click(function () {
-            quantity++;
-            $("#var-value").text(quantity);
-            $("#product-quanity").val(quantity);
-        });
-    });
-
-</script>
+        }
+        // Set Configs
+        let FptLiveChatConfigs = {
+            appName: FptAppName,
+            appCode: FptAppCode,
+            themes: '',
+            styles: CustomStyles
+        }
+        // Append Script
+        let FptLiveChatScript = document.createElement('script')
+        FptLiveChatScript.id = 'fpt_ai_livechat_script'
+        FptLiveChatScript.src = liveChatBaseUrl + '/static/fptai-livechat.js'
+        document.body.appendChild(FptLiveChatScript)
+        // Append Stylesheet
+        let FptLiveChatStyles = document.createElement('link')
+        FptLiveChatStyles.id = 'fpt_ai_livechat_script'
+        FptLiveChatStyles.rel = 'stylesheet'
+        FptLiveChatStyles.href = liveChatBaseUrl + '/static/fptai-livechat.css'
+        document.body.appendChild(FptLiveChatStyles)
+        // Init
+        FptLiveChatScript.onload = function () {
+            fpt_ai_render_chatbox(FptLiveChatConfigs, liveChatBaseUrl, LiveChatSocketUrl)
+        }
+    </script>
 
 
 </body>
